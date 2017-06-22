@@ -1,6 +1,8 @@
 #!/bin/bash
 set -eo pipefail
 
+export LANG="pt_BR.UTF-8"
+
 xauth(){
   if [ -n "${XAUTHORITY}" ] && [ -n "${HOST_HOSTNAME}" ]
   then
