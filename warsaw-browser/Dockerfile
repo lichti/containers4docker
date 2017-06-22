@@ -29,22 +29,20 @@ RUN apt update \
   fonts-symbola \
   firefox-esr \
   && apt clean \
-	&& rm -rf /var/lib/apt/lists/* 
-
-RUN groupadd -g 1000 -r bank
-RUN useradd -u 1000 -r -g bank -G audio,video bank 
-RUN mkdir -p /home/bank 
-RUN chown -R bank:bank /home/bank 
-RUN echo "bank ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-RUN chmod 0440 /etc/sudoers
-RUN passwd -d root
+  && rm -rf /var/lib/apt/lists/* \
+  && groupadd -g 1000 -r bank \
+  && useradd -u 1000 -r -g bank -G audio,video bank \
+  && mkdir -p /home/bank \
+  && chown -R bank:bank /home/bank \
+  && echo "bank ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
+  && chmod 0440 /etc/sudoers \
+  && passwd -d root \
+  && chmod 755 /start.sh \
+  && ln -s /start.sh /usr/local/bin/start.sh
 
 ADD https://cloud.gastecnologia.com.br/bb/downloads/ws/warsaw_setup64.deb /warsaw_setup64.deb
 COPY start.sh /start.sh
 COPY local.conf /etc/fonts/local.conf
-
-RUN chmod 755 /start.sh 
-RUN ln -s /start.sh /usr/local/bin/start.sh
 
 USER bank
 ENV HOME /home/bank
