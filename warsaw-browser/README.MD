@@ -1,3 +1,8 @@
+~~~
+Creditos ao meu amigo Kretcheu.
+http://kretcheu.com.br
+(A ideia foi 100% dele, eu apenas executei)
+~~~
 
 # Como executar
 
