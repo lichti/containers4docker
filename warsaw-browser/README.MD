@@ -30,7 +30,7 @@ Talvez você precise executar esse comando antes:
 xhost +
 ```
 
-É uma boa ideia você criar uma function e alias no seu .bashrc ou .zshrc. 
+É uma boa ideia você criar uma function e alias no seu .bashrc ou .zshrc.
 Ex:
 ```
 alias bb="warsaw-browser bb"
