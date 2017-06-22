@@ -16,6 +16,7 @@ http://kretcheu.com.br
 ```
 **Bancos**
 - bb
+- bbpj
 - itau
 - cef
 
@@ -34,6 +35,7 @@ xhost +
 Ex:
 ```
 alias bb="warsaw-browser bb"
+alias bbpj="warsaw-browser bbpj"
 alias cef="warsaw-browser cef"
 alias itau="warsaw-browser itau"
 
