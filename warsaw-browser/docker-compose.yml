@@ -1,0 +1,18 @@
+version: '2'
+services:
+  wscef:
+    image: lichit/warsaw-browser
+    build: .
+    devices:
+      - /dev/snd:/dev/snd
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/home/bank/.Xauthority
+      - HOST_HOSTNAME=${HOSTNAME}
+    cpuset: '0'
+    mem_limit: 512M
+    volumes:
+      - /dev/shm:/dev/shm
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${XAUTHORITY}:/tmp/.docker.xauth:ro
+      - ~/BankFiles:/home/bank/Downloads
