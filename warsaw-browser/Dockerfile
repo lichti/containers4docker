@@ -8,6 +8,8 @@ LABEL maintainer "Gustavo Lichti <gustavo.lichti@gmail.com>"
 #            --name warsaw-browser \
 #            lichti/warsaw-browser
 
+COPY start.sh /start.sh
+
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt update \
   && apt install -qqy \
@@ -41,7 +43,6 @@ RUN apt update \
   && ln -s /start.sh /usr/local/bin/start.sh
 
 ADD https://cloud.gastecnologia.com.br/bb/downloads/ws/warsaw_setup64.deb /warsaw_setup64.deb
-COPY start.sh /start.sh
 COPY local.conf /etc/fonts/local.conf
 
 USER bank
