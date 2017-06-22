@@ -1,7 +1,22 @@
 #!/bin/bash
 set -eo pipefail
 
+xauth(){
+  if [ -n "${XAUTHORITY}" ] && [ -n "${HOST_HOSTNAME}" ]
+  then
+    if [ "${HOSTNAME}" != "${HOST_HOSTNAME}" ]
+    then
+      [ -f ${XAUTHORITY} ] || touch ${XAUTHORITY}
+      xauth add ${HOSTNAME}/unix${DISPLAY} . \
+      $(xauth -f /tmp/.docker.xauth list ${HOST_HOSTNAME}/unix${DISPLAY} | awk '{ print $NF }')
+    else
+      cp /tmp/.docker.xauth ${XAUTHORITY}
+    fi
+  fi
+}
+
 run() {
+  xauth
   firefox -CreateProfile default
   sudo dpkg -i /warsaw_setup64.deb
   su -c "/etc/init.d/warsaw start"
