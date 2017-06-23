@@ -30,6 +30,7 @@ RUN apt update \
   libv4l-0 \
   fonts-symbola \
   firefox-esr \
+  --no-install-recommends \
   && apt clean \
   && rm -rf /var/lib/apt/lists/* \
   && groupadd -g 1000 -r bank \
