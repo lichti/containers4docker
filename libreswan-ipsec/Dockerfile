@@ -9,4 +9,4 @@ COPY template.secrets /tmp/ipsec.secrets
 
 ADD entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT [/entrypoint.sh]
+ENTRYPOINT ["/entrypoint.sh"]
