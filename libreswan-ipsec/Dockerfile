@@ -1,8 +1,8 @@
-FROM alpine:3.3
+FROM alpine:3.6
 
-ENV PACKAGES "libreswan"
+ENV PACKAGES libreswan
 
-RUN apk add --update $PACKAGES && rm -rf /var/cache/apk/*
+RUN apk update && apk add $PACKAGES && rm -rf /var/cache/apk/*
 
 COPY template.conf /tmp/ipsec.conf
 COPY template.secrets /tmp/ipsec.secrets
