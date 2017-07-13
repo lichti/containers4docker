@@ -1,8 +1,10 @@
-FROM alpine:3.6
+FROM debian:stable-slim
+LABEL maintainer "Gustavo Lichti <gustavo.lichti@gmail.com>"
 
-ENV PACKAGES "libreswan iptables bash openrc"
-
-RUN apk update && apk add $PACKAGES && rm -rf /var/cache/apk/*
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt update \
+  && apt install -qqy strongswan iptables bash openrc procps kmod \
+	&& rm -rf /var/lib/apt/lists/* 
 
 COPY template.conf /tmp/ipsec.conf
 COPY template.secrets /tmp/ipsec.secrets
