@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-ENV PACKAGES libreswan
+ENV PACKAGES "libreswan iptables bash openrc"
 
 RUN apk update && apk add $PACKAGES && rm -rf /var/cache/apk/*
 
