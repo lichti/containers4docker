@@ -14,8 +14,8 @@ sed -i "s|{{psk}}|$PSK|g" /tmp/ipsec.secrets
 mv /tmp/ipsec.conf /etc/ipsec.d/$CNAME.conf
 mv /tmp/ipsec.secrets /etc/ipsec.d/$CNAME.secrets
 
-echo "include /etc/ipsec.d/aws.conf" >> /etc/ipsec.conf
-echo "include /etc/ipsec.d/aws.secrets" >> /etc/ipsec.secrets
+echo "include /etc/ipsec.d/${CNAME}.conf" >> /etc/ipsec.conf
+echo "include /etc/ipsec.d/${CNAME}.secrets" >> /etc/ipsec.secrets
 /etc/init.d/ipsec start
 
 /bin/bash
