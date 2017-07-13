@@ -8,7 +8,7 @@ sed -i "s/{{remote-pip}}/$RPIP/g" /tmp/ipsec.conf
 sed -i "s/{{remote-cidr}}/$RCIDR/g" /tmp/ipsec.conf
 
 sed -i "s/{{local-pip}}/$LPIP/g" /tmp/ipsec.secrets
-sed -i "s/{{remote-pip}}/$RPI/g" /tmp/ipsec.secrets
+sed -i "s/{{remote-pip}}/$RPIP/g" /tmp/ipsec.secrets
 sed -i "s/{{psk}}/$PSK/g" /tmp/ipsec.secrets
 
 mv /tmp/ipsec.conf /etc/ipsec.d/$CNAME.conf
