@@ -22,7 +22,7 @@ ip link delete dummy0 >/dev/null 2>&1
 
 sed -i "s|{{conn_name}}|$CNAME|g" /tmp/ipsec.conf 
 sed -i "s|{{local-pip}}|$LPIP|g" /tmp/ipsec.conf
-sed -i "s|{{local-cidr}}|/$LCIDR|g" /tmp/ipsec.conf
+sed -i "s|{{local-cidr}}|$LCIDR|g" /tmp/ipsec.conf
 
 sed -i "s|{{remote-pip}}|$RPIP|g" /tmp/ipsec.conf
 sed -i "s|{{remote-cidr}}|$RCIDR|g" /tmp/ipsec.conf
