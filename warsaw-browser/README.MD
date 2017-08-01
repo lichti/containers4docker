@@ -43,7 +43,7 @@ function warsaw-browser {
   xhost +;
    docker run -it --rm \
               -v /tmp/.X11-unix:/tmp/.X11-unix \
-              -v $HOME/Downloads:/home/bank/Downloads \
+              -v $HOME/ArquivosDoBanco:/home/bank/Downloads \
               -e DISPLAY=unix$DISPLAY \
               --name warsaw-browser \
               lichti/warsaw-browser $1;
