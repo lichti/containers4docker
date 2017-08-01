@@ -27,6 +27,8 @@ RUN apt update \
   libpulse0 \
   libv4l-0 \
   fonts-symbola \
+  xauth \
+  language-pack-pt \
   firefox-esr \
   && apt clean \
 	&& rm -rf /var/lib/apt/lists/* 
