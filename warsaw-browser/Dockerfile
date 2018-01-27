@@ -37,8 +37,7 @@ RUN apt update \
   && rm -rf /var/lib/apt/lists/* \
   && groupadd -g 1000 -r bank \
   && useradd -u 1000 -r -g bank -G audio,video bank \
-  && mkdir -p /home/bank \
-  $$ mkdir -p /home/bank/Downloads \
+  && mkdir -p /home/bank/Downloads \
   && chown -R bank:bank /home/bank \
   && echo "bank ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
   && chmod 0440 /etc/sudoers \
