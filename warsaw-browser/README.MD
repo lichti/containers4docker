@@ -11,6 +11,7 @@ http://kretcheu.com.br
             -v /tmp/.X11-unix:/tmp/.X11-unix \
             -v $HOME/Downloads:/home/bank/Downloads \
             -e DISPLAY=unix$DISPLAY \
+            --shm-size 2g \
             --name warsaw-browser \
             lichti/warsaw-browser <banco>
 ```
@@ -45,6 +46,7 @@ function warsaw-browser {
               -v /tmp/.X11-unix:/tmp/.X11-unix \
               -v $HOME/ArquivosDoBanco:/home/bank/Downloads \
               -e DISPLAY=unix$DISPLAY \
+              --shm-size 2g \
               --name warsaw-browser \
               lichti/warsaw-browser $1;
 }
